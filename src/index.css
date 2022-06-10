@@ -23,3 +23,13 @@ code {
   font-size: 32px;
   font-weight: 600;
 }
+img{
+  width: 90%;
+}
+/* .step1{
+  background: url(./images/tangtoc.jpg);
+  height: 100vh;
+} */
+.ans1:hover{
+  background-color: aquamarine !important;
+}

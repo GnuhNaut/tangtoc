@@ -2,7 +2,12 @@
 import 'antd/dist/antd.css';
 import React from 'react';
 import image1 from './images/tangtoc.jpg'
-import {Questions} from './question';
+import {Questions1, Questions2, Questions3, Questions4} from './question';
+import ok2 from './images/ok2.png';
+import d1 from './images/d1.png';
+import d2 from './images/d2.png';
+import d3 from './images/d3.png';
+import d4 from './images/d4.png';
 
 import {
   Statistic,
@@ -19,14 +24,14 @@ class App extends React.Component {
       step: 1,
       score: 0,
       questions1: 0,
-      click: -1
+      click: -1,
     }
   }
 
   step1(){
     return (
-      <div>
-        {/* <button
+      <div className='step1'>
+        <button
           style={{
             position: 'absolute',
             zIndex: 2,
@@ -44,16 +49,16 @@ class App extends React.Component {
           }}
           onClick={e => {
             this.setState({
-              step: 2,
+              step: 4,
               deadline: Date.now() + 1000 * 60 * 10 + 1000
             })
           }}
         >
           START
-        </button> */}
+        </button>
         <img src={image1} alt="" style={{width: '100%'}}onClick={e => {
             this.setState({
-              step: 2,
+              step: 4,
               deadline: Date.now() + 1000 * 60 * 10 + 1000
             })
           }} />
@@ -65,7 +70,7 @@ class App extends React.Component {
       
       let question = this.state.questions1 + 1
       setTimeout(e=>{
-        if(question === Questions.length){
+        if(question === this.state.questions.length){
           this.setState({
             step: 3
           })
@@ -82,8 +87,26 @@ class App extends React.Component {
       
       style={{
         padding: 40,
-        paddingTop: 150
       }}>
+        <div
+          style={{
+            cursor: 'pointer',
+            color: '#000',
+            fontWeight: 600,
+            fontSize: 24,
+            paddingBottom: 50
+          }}
+          onClick={e=>{
+            this.setState({
+              step: 4,
+              score: 0,
+              click: -1,
+              questions1: 0
+            })
+          }}
+        >
+          BACK
+        </div>
         <Row>
           <Col span={17} style={{paddingRight: 50}}>
             <div>
@@ -100,7 +123,7 @@ class App extends React.Component {
                     borderRadius: 10,
                     backgroundColor: '#d8c3ff',
                     padding: "60px 40px",
-                    marginBottom: 60
+                    marginBottom: 35
                   }}
                 >
                   <span
@@ -120,15 +143,24 @@ class App extends React.Component {
                       })
                     }}/>
                 </div>
+                <div
+                    style={{
+                      fontSize: 32,
+                      fontWeight: 700,
+                    }}
+                  >
+                    ĐÁP ÁN
+                  </div>
                 <div 
                   style={{
                     backgroundColor: '#fff',
                     border: '1px solid #000',
                     borderRadius: 10,
                     padding: 30,
-                    height: 200
+                    height: 160
                   }}
                 >
+
                   {/* {
                     this.state.click >= 0 && 
                     <div
@@ -149,13 +181,13 @@ class App extends React.Component {
                   }}>
                   {
                     this.state.click >= 0 && (
-                      Questions[this.state.questions1].true === 0 ? "A" 
+                      this.state.questions[this.state.questions1].true === 0 ? "A" 
                         :
-                      Questions[this.state.questions1].true === 1 ? "B" 
+                        this.state.questions[this.state.questions1].true === 1 ? "B" 
                         :
-                      Questions[this.state.questions1].true === 2 ? "C" 
+                        this.state.questions[this.state.questions1].true === 2 ? "C" 
                         :
-                      Questions[this.state.questions1].true === 3 && "D" 
+                        this.state.questions[this.state.questions1].true === 3 && "D" 
                     )
                   }
                   </div>
@@ -186,6 +218,31 @@ class App extends React.Component {
             Chúc mừng đội bạn đạt được <br />
             Điểm: {" " + this.state.score}
           </span>
+          <button
+            style={{
+              border: '1px solid #000',
+              color: '#000',
+              fontSize: 24,
+              fontWeight: 600,
+              minHeight: 50,
+              minWidth: 200,
+              marginTop: 50,
+              borderRadius: 20,
+              cursor: 'pointer',
+              display: 'block',
+              margin: 'auto'
+            }}
+            onClick={e=>{
+              this.setState({
+                step: 4,
+                score: 0,
+                click: -1,
+                questions1: 0
+              })
+            }}
+          >
+            Play again!
+          </button>
       </div>
     )
   }
@@ -207,7 +264,7 @@ class App extends React.Component {
                   borderRadius: '12px 12px 0 0'
                 }}
               >
-                Câu hỏi {`${this.state.questions1 + 1}`} : {Questions[this.state.questions1].question}
+                Câu hỏi {`${this.state.questions1 + 1}`} : {this.state.questions[this.state.questions1].question}
               </div>
               <div
                 style={{
@@ -225,15 +282,16 @@ class App extends React.Component {
                   paddingTop: 10,
                   paddingBottom: 10,
                   cursor: 'pointer',
-                  color: this.state.click === 0 && Questions[this.state.questions1].true !== 0 ? 'red' : this.state.click === 0 && Questions[this.state.questions1].true === 0 ? 'green' : '#000',
+                  color: this.state.click === 0 && this.state.questions[this.state.questions1].true !== 0 ? 'red' : this.state.click === 0 && this.state.questions[this.state.questions1].true === 0 ? 'green' : '#000',
                   fontSize: 28
                 }}
+                className='ans1'
                 onClick={e => {
                   if(this.state.click >= 0){
                     return true;
                   }
                   let score =  this.state.score;
-                  if(Questions[this.state.questions1].true === 0){
+                  if(this.state.questions[this.state.questions1].true === 0){
                     score += 2;
                   }
                   this.setState({
@@ -242,7 +300,7 @@ class App extends React.Component {
                   })
                 }}
               >
-                A. {Questions[this.state.questions1].answer[0]}
+                A. {this.state.questions[this.state.questions1].answer[0]}
               </div>
               <div
                 style={{
@@ -250,15 +308,17 @@ class App extends React.Component {
                   paddingTop: 10,
                   paddingBottom: 10,
                   cursor: 'pointer',
-                  color: this.state.click === 1 && Questions[this.state.questions1].true !== 1 ? 'red' : this.state.click === 1 && Questions[this.state.questions1].true === 1 ? 'green' : '#000',
+                  color: this.state.click === 1 && this.state.questions[this.state.questions1].true !== 1 ? 'red' : this.state.click === 1 && this.state.questions[this.state.questions1].true === 1 ? 'green' : '#000',
                   fontSize: 28
                 }}
+
+                className='ans1'
                 onClick={e => {
                   if(this.state.click >= 0){
                     return true;
                   }
                   let score =  this.state.score;
-                  if(Questions[this.state.questions1].true === 1){
+                  if(this.state.questions[this.state.questions1].true === 1){
                     score += 2;
                   }
                   this.setState({
@@ -267,7 +327,7 @@ class App extends React.Component {
                   })
                 }}
               >
-                B. {Questions[this.state.questions1].answer[1]}
+                B. {this.state.questions[this.state.questions1].answer[1]}
               </div>
               <div
                 style={{
@@ -275,15 +335,17 @@ class App extends React.Component {
                   paddingTop: 10,
                   paddingBottom: 10,
                   cursor: 'pointer',
-                  color: this.state.click === 2 && Questions[this.state.questions1].true !== 2 ? 'red' : this.state.click === 2 && Questions[this.state.questions1].true === 2 ? 'green' : '#000',
+                  color: this.state.click === 2 && this.state.questions[this.state.questions1].true !== 2 ? 'red' : this.state.click === 2 && this.state.questions[this.state.questions1].true === 2 ? 'green' : '#000',
                   fontSize: 28
                 }}
+
+                className='ans1'
                 onClick={e => {
                   if(this.state.click >= 0){
                     return true;
                   }
                   let score =  this.state.score;
-                  if(Questions[this.state.questions1].true === 2){
+                  if(this.state.questions[this.state.questions1].true === 2){
                     score += 2;
                   }
                   this.setState({
@@ -292,7 +354,7 @@ class App extends React.Component {
                   })
                 }}
               >
-                D. {Questions[this.state.questions1].answer[2]}
+                C. {this.state.questions[this.state.questions1].answer[2]}
               </div>
               <div
                 style={{
@@ -300,15 +362,16 @@ class App extends React.Component {
                   paddingTop: 10,
                   paddingBottom: 10,
                   cursor: 'pointer',
-                  color: this.state.click === 3 && Questions[this.state.questions1].true !== 3 ? 'red' : this.state.click === 3 && Questions[this.state.questions1].true === 3 ? 'green' : '#000',
+                  color: this.state.click === 3 && this.state.questions[this.state.questions1].true !== 3 ? 'red' : this.state.click === 3 && this.state.questions[this.state.questions1].true === 3 ? 'green' : '#000',
                   fontSize: 28
                 }}
+                className='ans1'
                 onClick={e => {
                   if(this.state.click >= 0){
                     return true;
                   }
                   let score =  this.state.score;
-                  if(Questions[this.state.questions1].true === 3){
+                  if(this.state.questions[this.state.questions1].true === 3){
                     score += 2;
                   }
                   this.setState({
@@ -317,10 +380,84 @@ class App extends React.Component {
                   })
                 }}
               >
-                C. {Questions[this.state.questions1].answer[2]}
+                D. {this.state.questions[this.state.questions1].answer[2]}
               </div>
               </div>
             </div>
+      </div>
+    )
+  }
+  step22 = () => {
+    return(
+      <div>
+        <div
+          style={{
+            textAlign: 'center',
+            paddingBottom: 60
+          }}
+        >
+          <img src={ok2} alt="" />
+        </div>
+        <div>
+          <Row>
+            <Col
+              style={{
+                margin: 'auto',
+                textAlign: 'center'
+              }}
+              span={6}
+            >
+              <img src={d1} alt="" style={{cursor: 'pointer'}} onClick={e=>{
+                this.setState({
+                  step: 2,
+                  questions: Questions1
+                })
+              }}/>
+            </Col>
+            <Col
+              style={{
+                margin: 'auto',
+                textAlign: 'center'
+              }}
+              span={6}
+            >
+              <img src={d2} alt="" style={{cursor: 'pointer'}} onClick={e=>{
+                this.setState({
+                  step: 2,
+                  questions: Questions2
+                })
+              }} />
+            </Col>
+            <Col
+              style={{
+                margin: 'auto',
+                textAlign: 'center'
+              }}
+              span={6}
+            >
+              <img src={d3} alt="" style={{cursor: 'pointer'}} onClick={e=>{
+                this.setState({
+                  step: 2,
+                  questions: Questions3
+                })
+              }}/>
+            </Col>
+            <Col
+              style={{
+                margin: 'auto',
+                textAlign: 'center'
+              }}
+              span={6}
+            >
+              <img src={d4} alt="" style={{cursor: 'pointer'}} onClick={e=>{
+                this.setState({
+                  step: 2,
+                  questions: Questions4
+                })
+              }} />
+            </Col>
+          </Row>
+        </div>
       </div>
     )
   }
@@ -337,8 +474,12 @@ class App extends React.Component {
           this.step2()
             :
           this.state.step === 3 
-            &&
+            ?
           this.step3()
+            :
+          this.state.step === 4
+            &&
+          this.step22()
        }
       </div>
     )
