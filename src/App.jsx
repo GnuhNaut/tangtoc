@@ -380,7 +380,7 @@ class App extends React.Component {
                   })
                 }}
               >
-                D. {this.state.questions[this.state.questions1].answer[2]}
+                D. {this.state.questions[this.state.questions1].answer[3]}
               </div>
               </div>
             </div>
