@@ -1,17 +1,22 @@
 {
   "files": {
-    "main.css": "/tangtoc/static/css/main.c4060286.css",
-    "main.js": "/tangtoc/static/js/main.5cfd3ff9.js",
+    "main.css": "/tangtoc/static/css/main.6df84831.css",
+    "main.js": "/tangtoc/static/js/main.b3d9b9c6.js",
     "static/js/787.c0290d34.chunk.js": "/tangtoc/static/js/787.c0290d34.chunk.js",
+    "static/media/ok2.png": "/tangtoc/static/media/ok2.d1a8f3b739fe92bd818d.png",
+    "static/media/d4.png": "/tangtoc/static/media/d4.eeec341beb9606bf4814.png",
+    "static/media/d2.png": "/tangtoc/static/media/d2.4c746c6c40fa3ca1b19a.png",
     "static/media/bg.jpg": "/tangtoc/static/media/bg.72f7d2c81283c39cb07d.jpg",
+    "static/media/d1.png": "/tangtoc/static/media/d1.989ceab4540f732c6922.png",
     "static/media/tangtoc.jpg": "/tangtoc/static/media/tangtoc.a41a60d659b01d21cb36.jpg",
+    "static/media/d3.png": "/tangtoc/static/media/d3.eadcce53ad56cef2e394.png",
     "index.html": "/tangtoc/index.html",
-    "main.c4060286.css.map": "/tangtoc/static/css/main.c4060286.css.map",
-    "main.5cfd3ff9.js.map": "/tangtoc/static/js/main.5cfd3ff9.js.map",
+    "main.6df84831.css.map": "/tangtoc/static/css/main.6df84831.css.map",
+    "main.b3d9b9c6.js.map": "/tangtoc/static/js/main.b3d9b9c6.js.map",
     "787.c0290d34.chunk.js.map": "/tangtoc/static/js/787.c0290d34.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4060286.css",
-    "static/js/main.5cfd3ff9.js"
+    "static/css/main.6df84831.css",
+    "static/js/main.b3d9b9c6.js"
   ]
 }
