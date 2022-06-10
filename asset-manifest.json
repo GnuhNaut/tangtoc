@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/tangtoc/static/css/main.d1340b6f.css",
-    "main.js": "/tangtoc/static/js/main.c3cf08c0.js",
+    "main.css": "/tangtoc/static/css/main.c4060286.css",
+    "main.js": "/tangtoc/static/js/main.5cfd3ff9.js",
     "static/js/787.c0290d34.chunk.js": "/tangtoc/static/js/787.c0290d34.chunk.js",
     "static/media/bg.jpg": "/tangtoc/static/media/bg.72f7d2c81283c39cb07d.jpg",
     "static/media/tangtoc.jpg": "/tangtoc/static/media/tangtoc.a41a60d659b01d21cb36.jpg",
     "index.html": "/tangtoc/index.html",
-    "main.d1340b6f.css.map": "/tangtoc/static/css/main.d1340b6f.css.map",
-    "main.c3cf08c0.js.map": "/tangtoc/static/js/main.c3cf08c0.js.map",
+    "main.c4060286.css.map": "/tangtoc/static/css/main.c4060286.css.map",
+    "main.5cfd3ff9.js.map": "/tangtoc/static/js/main.5cfd3ff9.js.map",
     "787.c0290d34.chunk.js.map": "/tangtoc/static/js/787.c0290d34.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1340b6f.css",
-    "static/js/main.c3cf08c0.js"
+    "static/css/main.c4060286.css",
+    "static/js/main.5cfd3ff9.js"
   ]
 }
