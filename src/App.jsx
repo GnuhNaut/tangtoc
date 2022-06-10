@@ -65,7 +65,7 @@ class App extends React.Component {
       
       let question = this.state.questions1 + 1
       setTimeout(e=>{
-        if(this.state.questions1 === Questions.length - 1){
+        if(question === Questions.length){
           this.setState({
             step: 3
           })
@@ -85,27 +85,27 @@ class App extends React.Component {
         paddingTop: 150
       }}>
         <Row>
-          <Col span={18} style={{paddingRight: 50}}>
+          <Col span={17} style={{paddingRight: 50}}>
             <div>
               {
                 this.renderQuestion()
               }
             </div>
           </Col>
-          <Col span={6}>
+          <Col span={7}>
               <div>
                 <div
                   style={{
                     border: '1px solid #000',
                     borderRadius: 10,
                     backgroundColor: '#d8c3ff',
-                    padding: 30,
-                    marginBottom: 50
+                    padding: "60px 40px",
+                    marginBottom: 60
                   }}
                 >
                   <span
                       style={{
-                        color: 'yellow',
+                        color: 'red',
                         fontWeight: 600,
                         fontSize: 36,
                         textAlign: 'center'
@@ -126,7 +126,7 @@ class App extends React.Component {
                     border: '1px solid #000',
                     borderRadius: 10,
                     padding: 30,
-                    height: 150
+                    height: 200
                   }}
                 >
                   {/* {
@@ -144,7 +144,7 @@ class App extends React.Component {
                   <div
                   style={{
                     fontWeight: 700,
-                    fontSize: 48,
+                    fontSize: 78,
                     textAlign: 'center'
                   }}>
                   {
@@ -153,7 +153,9 @@ class App extends React.Component {
                         :
                       Questions[this.state.questions1].true === 1 ? "B" 
                         :
-                      Questions[this.state.questions1].true === 2 && "C" 
+                      Questions[this.state.questions1].true === 2 ? "C" 
+                        :
+                      Questions[this.state.questions1].true === 3 && "D" 
                     )
                   }
                   </div>
@@ -282,6 +284,31 @@ class App extends React.Component {
                   }
                   let score =  this.state.score;
                   if(Questions[this.state.questions1].true === 2){
+                    score += 2;
+                  }
+                  this.setState({
+                    score: score,
+                    click: 2
+                  })
+                }}
+              >
+                D. {Questions[this.state.questions1].answer[2]}
+              </div>
+              <div
+                style={{
+                  paddingLeft: 10,
+                  paddingTop: 10,
+                  paddingBottom: 10,
+                  cursor: 'pointer',
+                  color: this.state.click === 3 && Questions[this.state.questions1].true !== 3 ? 'red' : this.state.click === 3 && Questions[this.state.questions1].true === 3 ? 'green' : '#000',
+                  fontSize: 28
+                }}
+                onClick={e => {
+                  if(this.state.click >= 0){
+                    return true;
+                  }
+                  let score =  this.state.score;
+                  if(Questions[this.state.questions1].true === 3){
                     score += 2;
                   }
                   this.setState({
