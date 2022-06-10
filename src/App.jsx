@@ -101,7 +101,8 @@ class App extends React.Component {
               step: 4,
               score: 0,
               click: -1,
-              questions1: 0
+              questions1: 0,
+              deadline: Date.now() + 1000 * 60 * 10 + 1000
             })
           }}
         >
@@ -226,18 +227,19 @@ class App extends React.Component {
               fontWeight: 600,
               minHeight: 50,
               minWidth: 200,
-              marginTop: 50,
               borderRadius: 20,
               cursor: 'pointer',
               display: 'block',
-              margin: 'auto'
+              margin: 'auto',
+              marginTop: 50,
             }}
             onClick={e=>{
               this.setState({
                 step: 4,
                 score: 0,
                 click: -1,
-                questions1: 0
+                questions1: 0,
+                deadline: Date.now() + 1000 * 60 * 10 + 1000
               })
             }}
           >
