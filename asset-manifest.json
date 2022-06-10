@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tangtoc/static/css/main.6df84831.css",
-    "main.js": "/tangtoc/static/js/main.b3d9b9c6.js",
+    "main.js": "/tangtoc/static/js/main.2bbfc28c.js",
     "static/js/787.c0290d34.chunk.js": "/tangtoc/static/js/787.c0290d34.chunk.js",
     "static/media/ok2.png": "/tangtoc/static/media/ok2.d1a8f3b739fe92bd818d.png",
     "static/media/d4.png": "/tangtoc/static/media/d4.eeec341beb9606bf4814.png",
@@ -12,11 +12,11 @@
     "static/media/d3.png": "/tangtoc/static/media/d3.eadcce53ad56cef2e394.png",
     "index.html": "/tangtoc/index.html",
     "main.6df84831.css.map": "/tangtoc/static/css/main.6df84831.css.map",
-    "main.b3d9b9c6.js.map": "/tangtoc/static/js/main.b3d9b9c6.js.map",
+    "main.2bbfc28c.js.map": "/tangtoc/static/js/main.2bbfc28c.js.map",
     "787.c0290d34.chunk.js.map": "/tangtoc/static/js/787.c0290d34.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6df84831.css",
-    "static/js/main.b3d9b9c6.js"
+    "static/js/main.2bbfc28c.js"
   ]
 }
