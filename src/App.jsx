@@ -31,7 +31,7 @@ class App extends React.Component {
   step1(){
     return (
       <div className='step1'>
-        <button
+        {/* <button
           style={{
             position: 'absolute',
             zIndex: 2,
@@ -55,7 +55,7 @@ class App extends React.Component {
           }}
         >
           START
-        </button>
+        </button> */}
         <img src={image1} alt="" style={{width: '100%'}}onClick={e => {
             this.setState({
               step: 4,
