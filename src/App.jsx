@@ -376,7 +376,7 @@ class App extends React.Component {
                   }
                   this.setState({
                     score: score,
-                    click: 2
+                    click: 3
                   })
                 }}
               >
