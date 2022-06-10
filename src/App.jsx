@@ -75,7 +75,7 @@ class App extends React.Component {
             questions1: question
           })
         }
-      }, 1000)
+      }, 2000)
     }
     return(
       <div
@@ -176,7 +176,7 @@ class App extends React.Component {
       >
         <span
             style={{
-              color: 'yellow',
+              color: 'blue',
               fontWeight: 600,
               fontSize: 36
             }}

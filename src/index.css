@@ -13,7 +13,8 @@ code {
 }
 .main-bk{
   /* background-image: linear-gradient(to right,#a60146, #0000E8); */
-  background-color: #4dd6ef;
+  /* background-color: #4dd6ef; */
+  background: url(./images/bg.jpg);
   /* color: #fff; */
   height: 100vh;
 }
