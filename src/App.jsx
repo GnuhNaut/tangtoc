@@ -179,7 +179,7 @@ class App extends React.Component {
                     fontWeight: 700,
                     fontSize: 78,
                     textAlign: 'center',
-                    color: 'red'
+                    // color: 'red'
                   }}>
                   {
                     this.state.click >= 0 && (
