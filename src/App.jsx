@@ -80,7 +80,7 @@ class App extends React.Component {
             questions1: question
           })
         }
-      }, 102000)
+      }, 1000)
     }
     return(
       <div
@@ -144,7 +144,7 @@ class App extends React.Component {
                       })
                     }}/>
                 </div>
-                <div
+                {/* <div
                     style={{
                       fontSize: 32,
                       fontWeight: 700,
@@ -161,19 +161,6 @@ class App extends React.Component {
                     height: 160
                   }}
                 >
-
-                  {/* {
-                    this.state.click >= 0 && 
-                    <div
-                    style={{
-                      fontSize: 32,
-                      fontWeight: 700,
-                      color: "red",
-                    }}
-                  >
-                    ĐÁP ÁN
-                  </div>
-                  } */}
                   <div
                   style={{
                     fontWeight: 700,
@@ -193,7 +180,7 @@ class App extends React.Component {
                     )
                   }
                   </div>
-                </div>
+                </div> */}
               </div>
           </Col>
         </Row>
