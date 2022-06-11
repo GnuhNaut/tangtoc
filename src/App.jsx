@@ -80,7 +80,7 @@ class App extends React.Component {
             questions1: question
           })
         }
-      }, 2000)
+      }, 102000)
     }
     return(
       <div
@@ -178,7 +178,8 @@ class App extends React.Component {
                   style={{
                     fontWeight: 700,
                     fontSize: 78,
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    color: 'red'
                   }}>
                   {
                     this.state.click >= 0 && (
@@ -270,7 +271,7 @@ class App extends React.Component {
               </div>
               <div
                 style={{
-                  backgroundColor: '#6bc259',
+                  backgroundColor: '#f5eaac',
                   border: '1px solid #000',
                   borderTop: 0,
                   padding: 30,
@@ -284,7 +285,7 @@ class App extends React.Component {
                   paddingTop: 10,
                   paddingBottom: 10,
                   cursor: 'pointer',
-                  color: this.state.click === 0 && this.state.questions[this.state.questions1].true !== 0 ? 'red' : this.state.click === 0 && this.state.questions[this.state.questions1].true === 0 ? 'green' : '#000',
+                  color: this.state.click === 0 && this.state.questions[this.state.questions1].true !== 0 ? 'red' : this.state.click >= 0 && this.state.questions[this.state.questions1].true === 0 ? '#02c002' : '#000',
                   fontSize: 28
                 }}
                 className='ans1'
@@ -310,7 +311,7 @@ class App extends React.Component {
                   paddingTop: 10,
                   paddingBottom: 10,
                   cursor: 'pointer',
-                  color: this.state.click === 1 && this.state.questions[this.state.questions1].true !== 1 ? 'red' : this.state.click === 1 && this.state.questions[this.state.questions1].true === 1 ? 'green' : '#000',
+                  color: this.state.click === 1 && this.state.questions[this.state.questions1].true !== 1 ? 'red' : this.state.click >=0 && this.state.questions[this.state.questions1].true === 1 ? '#02c002' : '#000',
                   fontSize: 28
                 }}
 
@@ -337,7 +338,7 @@ class App extends React.Component {
                   paddingTop: 10,
                   paddingBottom: 10,
                   cursor: 'pointer',
-                  color: this.state.click === 2 && this.state.questions[this.state.questions1].true !== 2 ? 'red' : this.state.click === 2 && this.state.questions[this.state.questions1].true === 2 ? 'green' : '#000',
+                  color: this.state.click === 2 && this.state.questions[this.state.questions1].true !== 2 ? 'red' : this.state.click >=0 && this.state.questions[this.state.questions1].true === 2 ? '#02c002' : '#000',
                   fontSize: 28
                 }}
 
@@ -364,7 +365,7 @@ class App extends React.Component {
                   paddingTop: 10,
                   paddingBottom: 10,
                   cursor: 'pointer',
-                  color: this.state.click === 3 && this.state.questions[this.state.questions1].true !== 3 ? 'red' : this.state.click === 3 && this.state.questions[this.state.questions1].true === 3 ? 'green' : '#000',
+                  color: this.state.click === 3 && this.state.questions[this.state.questions1].true !== 3 ? 'red' : this.state.click >=0 && this.state.questions[this.state.questions1].true === 3 ? '#02c002' : '#000',
                   fontSize: 28
                 }}
                 className='ans1'
