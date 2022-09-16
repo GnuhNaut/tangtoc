@@ -40,7 +40,7 @@ class Tool extends React.Component {
                   var res = '';
                   data.forEach(line =>  {
                     if(!(line.includes('[') && line.includes(']')) && line != ''){
-                        res = res + line + ' |1|\n' ;
+                        res = res + line + '|1|\n' ;
                         console.log('line', line)
                     }
                     // console.log('data', res)
