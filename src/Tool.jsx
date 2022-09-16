@@ -19,10 +19,11 @@ class Tool extends React.Component {
   render(){
     return (
       <div style={{height: "100vh"}}>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '3rem'}}>
-        <div  style={{fontSize: '3rem', fontWeight: 700, marginRight: 10}}>
-            OANH GIÀ kéo file vào đây => 
+        <div >
+        <div  style={{fontSize: '3rem', fontWeight: 700, marginRight: 10, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '3rem'}}>
+        Bé Oanh cute mời mọi người kéo file vào đây
         </div>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '3rem'}}>
       <Upload
           accept=".txt"
           showUploadList={false}
@@ -35,13 +36,14 @@ class Tool extends React.Component {
                   console.log(e)
                   console.log(e.target.result);
                   var contents = e.target.result;
-                  var data = contents.split("\n"), output = [];
+                  var data = contents.split(/\r?\n/);
                   var res = '';
                   data.forEach(line =>  {
                     if(!(line.includes('[') && line.includes(']')) && line != ''){
-                        res += line + "\n";
+                        res = res + line + ' |1|\n' ;
+                        console.log('line', line)
                     }
-                    console.log('data', res)
+                    // console.log('data', res)
                     this.setState({data: res})
                 });
               };
@@ -91,6 +93,7 @@ class Tool extends React.Component {
           </div>
       </Upload> 
       </div>
+      </div>
               {
                 this.state.data &&
                 <div style={{textAlign: 'center', marginTop: 20}}>
@@ -101,15 +104,15 @@ class Tool extends React.Component {
                             const file = new Blob([this.state.data], {type: 'text/plain'});
                             element.href = URL.createObjectURL(file);
                             element.download = "seeding.txt";
-                            document.body.appendChild(element); // Required for this to work in FireFox
+                            document.body.appendChild(element); 
                             element.click();
                         }}
                     >
-                        Tải ở đây nha Oanh già
+                        Tải ở đây nha :)
                     </Button>
                 </div>
               }
-        <div style={{textAlign: 'center', fontSize: 20, fontWeight: 700, marginTop: 100}}>
+        <div style={{textAlign: 'center', fontSize: 30, fontWeight: 700, marginTop: 100, position: 'fixed', bottom: 0, width: '100%'}}>
             Made by Gunh Naut
         </div>
       </div>
