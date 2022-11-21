@@ -6,6 +6,7 @@ import {
   Button,
   Input
 } from 'antd';
+const { TextArea } = Input;
 
 
 class Tool extends React.Component {
@@ -92,6 +93,10 @@ class Tool extends React.Component {
               }
           </div>
       </Upload> 
+      <TextArea rows={4} onChange={e=>{
+        console.log('e', e.target.value)
+      }} />
+
       </div>
       </div>
               {
