@@ -2,10 +2,6 @@
 import 'antd/dist/antd.css';
 import React from 'react';
 import { useState } from 'react';
-import {
-  Input
-} from 'antd'
-import axios from 'axios';
 import { useEffect } from 'react';
 
 const App = () => {
