@@ -8,11 +8,6 @@ const App = () => {
   const [link, setLink] = useState()
 
   useEffect(() => {
-    // axios.get("https://sites.google.com/view/tailieucntt2020/cc/cautrucdulieuvagiaithuat_thacbinhcuong?authuser=0")
-    //   .then(res => {
-    //       console.log('res', res)
-    //   });
-
     var newList = []
     for(let i = 0; i < list.length; i++) {
       console.log('typeof', typeof list[i])
@@ -25,15 +20,13 @@ const App = () => {
     console.log('newList', list)
   }, [])
 
-  const handleSubmit = async () => {
-
-  }
   return(
     <div style={{padding: 30}}>
       <div style={{fontSize: 30}}>
         {
           link && 
             <a 
+              rel="noreferrer"
               href={link[0]} 
               target={"_blank"}
               onClick={e=>{
