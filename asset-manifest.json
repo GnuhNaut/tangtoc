@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/tangtoc/static/css/main.6df84831.css",
-    "main.js": "/tangtoc/static/js/main.80db4241.js",
+    "main.js": "/tangtoc/static/js/main.143184d8.js",
     "static/js/787.c0290d34.chunk.js": "/tangtoc/static/js/787.c0290d34.chunk.js",
     "static/media/bg.jpg": "/tangtoc/static/media/bg.72f7d2c81283c39cb07d.jpg",
     "index.html": "/tangtoc/index.html",
     "main.6df84831.css.map": "/tangtoc/static/css/main.6df84831.css.map",
-    "main.80db4241.js.map": "/tangtoc/static/js/main.80db4241.js.map",
+    "main.143184d8.js.map": "/tangtoc/static/js/main.143184d8.js.map",
     "787.c0290d34.chunk.js.map": "/tangtoc/static/js/787.c0290d34.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6df84831.css",
-    "static/js/main.80db4241.js"
+    "static/js/main.143184d8.js"
   ]
 }
