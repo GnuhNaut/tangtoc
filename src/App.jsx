@@ -8,6 +8,7 @@ const App = () => {
   const [link, setLink] = useState()
 
   useEffect(() => {
+    // XqQF9c
     var newList = []
     for(let i = 0; i < list.length; i++) {
       console.log('typeof', typeof list[i])
@@ -25,24 +26,170 @@ const App = () => {
       <div style={{fontSize: 30}}>
         {
           link && 
-            <a 
-              rel="noreferrer"
-              href={link[0]} 
-              target={"_blank"}
+          <div>
+            <button
               onClick={e=>{
+                navigator.clipboard.writeText(link[0])
+                setTimeout(() =>{
+                  const data = link
+                  data.shift()
+                  console.log('data', data)
+                  setLink([...data])
+                }, 2000)
+              }}
+            >
+              COPY
+            </button> <br />
+          <a 
+            rel="noreferrer"
+            href={link[0]} 
+            target={"_blank"}
+            onClick={e=>{
+              setTimeout(() =>{
                 const data = link
                 data.shift()
                 console.log('data', data)
                 setLink([...data])
+              }, 2000)
+            }}
+          >
+            {link[0]}
+          </a>
+
+            <div>
+              <div>
+              ytp-button ytp-settings-button
+              <button
+                onClick={e=>{
+                  navigator.clipboard.writeText('ytp-button ytp-settings-button')
+                }}
+              >
+                Copy
+              </button>
+              </div>
+              <div>
+                ALL
+                <button
+                onClick={e=>{
+                  navigator.clipboard.writeText("document.getElementsByClassName('ytp-settings-button')[0].click();setTimeout(() => {document.getElementsByClassName('ytp-menuitem')[2].click(); setTimeout(()=>{document.getElementsByClassName('ytp-menuitem')[0].click()}, 500)}, 500);")
+                }}
+              >
+                Copy
+              </button>
+              </div>
+              <div>
+                Setting
+                <button
+                onClick={e=>{
+                  navigator.clipboard.writeText("document.getElementsByClassName('ytp-settings-button')[0].click()")
+                }}
+              >
+                Copy
+              </button>
+              </div>
+              <div>
+                document.getElementsByClassName('ytp-menuitem')[2].click()
+                <button
+                onClick={e=>{
+                  navigator.clipboard.writeText("document.getElementsByClassName('ytp-menuitem')[2].click()")
+                }}
+              >
+                Copy
+              </button>
+              </div>
+              <div>
+
+            document.getElementsByClassName('ytp-menuitem')[0].click()
+            <button
+                onClick={e=>{
+                  navigator.clipboard.writeText("document.getElementsByClassName('ytp-menuitem')[0].click()")
+                }}
+              >
+                Copy
+              </button>
+              </div>
+              <div>
+
+            var video = document.getElementsByClassName('html5-main-video')[0].src
+            <button
+                onClick={e=>{
+                  navigator.clipboard.writeText("var video = document.getElementsByClassName('html5-main-video')[0].src")
+                }}
+              >
+                Copy
+              </button>
+              </div>
+              <div>
+
+            window.open(video, '_blank')
+            <button
+                onClick={e=>{
+                  navigator.clipboard.writeText("window.open(video, '_blank')")
+                }}
+              >
+                Copy
+              </button>
+              </div>
+              <div>
+                copy(document.title)
+                <button
+                onClick={e=>{
+                  navigator.clipboard.writeText("var video = document.getElementsByClassName('html5-main-video')[0].src \n window.open(video, '_blank') \nvar x = document.title \n copy(x.replace(/:/g,'_'))")
+                }}
+              >
+                Copy
+              </button>
+              </div>
+
+            {/* <iframe src={link} width="640" height="480" allow="autoplay"></iframe> */}
+            </div>
+            <button
+              onClick={e=>{
+                const data = link
+                  data.shift()
+                  console.log('data', data)
+                  setLink([...data])
               }}
             >
-              {link[0]}
-            </a>
+              Next
+            </button>
+          </div>
         }
       </div>
-
     </div>
   )
 }
 export default App;
-const list =  ['https://www.google.com/url?q=https%3A%2F%2Fwww.fac…2021&sa=D&sntz=1&usg=AOvVaw00zQ6wRww5EGw2I_GsFf2u', 'https://drive.google.com/file/d/1PTOe4ciE1x3raZQFvs9dfrrPEEWKXUfA/view', 'https://drive.google.com/file/d/187owpVvTzSjXBzh8S8B3x8wjlfcStYnD/view', 'https://drive.google.com/file/d/1iUD-70fj0RfmjCYXuMPrQIUc11rpe-Wn/view', 'https://drive.google.com/file/d/1Cq4WLJ4fUxuYeRRTBeBxrqJQEFbksD_J/view', 'https://drive.google.com/file/d/16I2WDqr9oYrQtIfK-E-q4esxRjhaQwsc/view', 'https://drive.google.com/file/d/1MWkEyzz-nvOwLj12eEy_WVemEJNTP5VE/view', 'https://drive.google.com/file/d/1GBdIr7_y9GyEIkLxVK3lbxH-KVmHERkg/view', 'https://drive.google.com/file/d/1OZMqxhJ8FTntWvRGcayC-cflMsxF5AKz/view', 'https://drive.google.com/file/d/1IMlEPGNXPF71sJ4iEYVjguMKR23MFWyx/view', 'https://drive.google.com/file/d/1g7yc8aW34dOEXNMBDGt7ooNnBOrkeZyr/view', 'https://sites.google.com/view/tailieucntt2020/free?authuser=0', 'https://drive.google.com/file/d/1llebYkwFxsJzUFFp8vfhZbNJFeVsB-ZF/view', 'https://drive.google.com/file/d/1u80kMHwZFKbpYdLIe45_eUJ4W00_PEvP/view', 'https://drive.google.com/file/d/1RXIuBACTxLX7IEr_gWKBbWdrHpkH8n8a/view', 'https://drive.google.com/file/d/1ec8aqd3ZKCaErdHOVDExPHhNyQKyGrLO/view', 'https://drive.google.com/file/d/1hPrxQyVGtTndV6NoM379MyWMy2u165xk/view', 'https://drive.google.com/file/d/1X1VHAMAEJ-kf1eSkT8pH2WgBEJ0WMaxV/view', 'https://sites.google.com/view/tailieucntt2020/free?authuser=0', 'https://drive.google.com/file/d/1g1_DpUAzJjus35F8HGziW4Dqx6qfLOZd/view', 'https://drive.google.com/file/d/1CkE99e3zpmzcrfyafDG1dkM9OrhIZErv/view', 'https://drive.google.com/file/d/1q99hpd6HeyYll6vfb0Ua-OGJfoMRmnk7/view', 'https://drive.google.com/file/d/1troQ0YcDkthzel5K8hZ4hOwVuEjKGgz7/view', 'https://drive.google.com/file/d/10asgdlaiZaNaQSVXpmq67DTO8JYh2C2R/view', 'https://sites.google.com/view/tailieucntt2020/free?authuser=0', 'https://drive.google.com/file/d/1Vp9hFKQJs5P-vZHaX5PV0IRfMOOa2DUr/view', 'https://drive.google.com/file/d/15DTIEffmR61SXDb5OA6hKh1U0hGyPRTi/view', 'https://drive.google.com/file/d/19h0228h4wGhFei7n00Dg3GHiy6U137X6/view', 'https://drive.google.com/file/d/12OmsHS7ZiUPiTcCgLJLRSRAguroMrun8/view', 'https://drive.google.com/file/d/19c47QxYQIWOJaFKktO2tp7m_miAqKfVB/view', 'https://drive.google.com/file/d/1SFj8tJnpE_xbVWoEQCQYYz5TKcp8V-oq/view', 'https://drive.google.com/file/d/1PZ4eOr8m7sxuVxYEbTOBLeZIHtonfHNx/view', 'https://drive.google.com/file/d/1EnJaRMZU3Zg_mtKRXjK30fos8gVRflo_/view', 'https://sites.google.com/view/tailieucntt2020/free?authuser=0', 'https://drive.google.com/file/d/1hQQ347GUYUCwIGug6fHDRC2otdw405P9/view', 'https://drive.google.com/file/d/1lxl6-dYb9rp7JEH2HsxPsUkVWu13XdAw/view', 'https://drive.google.com/file/d/1HeB7mUnBn8twH3ZqIJzFlKmLRsAtHfWR/view', 'https://drive.google.com/file/d/10jFLO0H9MwWVf_3rHHJuTJhXe2aHmGnn/view', 'https://drive.google.com/file/d/1f6Q8r-oaQZ26D57-JuEDHf3cae81JXAm/view', 'https://drive.google.com/file/d/1ShKN9wG1FFkbf7baXakGEI5L7uJl9HSD/view', 'https://drive.google.com/file/d/1rNope0KChXTsOiYP5Whv8qd9FI5hdRxb/view', 'https://drive.google.com/file/d/1fGmlndHEZJabGZwojHvIWrwCWQMYNH30/view', 'https://drive.google.com/file/d/1pLua4lo2r-Y3oF-4mjmMybcc2zIEHNjO/view', 'https://drive.google.com/file/d/14rqMMlUC2Mvs6hGWmVV-kGBqW-6tc7M0/view', 'https://drive.google.com/file/d/15Y_lrkWIfsZ1xavwslWSNjj0tXm02Up_/view', 'https://sites.google.com/view/tailieucntt2020/free?authuser=0', 'https://drive.google.com/file/d/1UKAcVv5UYloJc395CRt8Yvl01sFl7jtk/view', 'https://drive.google.com/file/d/1p_bw5QGPlH5MVsi9-YVIj8XtBtFOi7SD/view', 'https://drive.google.com/file/d/10bdLvqZ-T5D-iWl0NQdAQs8BKQEqB--y/view', 'https://drive.google.com/file/d/1ttyb9NAvRzLuCfadH0DvD6JnyYLLKk4B/view', 'https://drive.google.com/file/d/1QPUNzUqo8VLM20XYnmZWZBxkFr414oUC/view', 'https://drive.google.com/file/d/10uXuOdHmHBYOf4SzNxqNuhkr5vVzTQ6c/view', 'https://drive.google.com/file/d/1VqUdTIkcfzUgPIWfCLWLBnQaVod8R1J2/view', 'https://drive.google.com/file/d/1qc_NepoHQ2-MhHAaO7ZAJCFSADN6Kuq0/view', 'https://sites.google.com/view/tailieucntt2020/free?authuser=0', 'https://drive.google.com/file/d/1lDREluSPey1UJF_MbFgceWOhMWVNW-du/view', 'https://drive.google.com/file/d/195Q-y_2eE_hadNaon59MmbTjeCW8DuOV/view', 'https://drive.google.com/file/d/1zSmEBtYOvOArujUb-jr07z2gyEc-RHxO/view', 'https://drive.google.com/file/d/1-3gtnbGREF_4BuQwc4bKPefxNvSUEsbz/view', 'https://drive.google.com/file/d/1d6jeFyRtLGW41eFurTNa05BmET4Db1wl/view', 'https://drive.google.com/file/d/1sYwCRdKLVJNcEFTmx7s9cSOI1Bo6RnFA/view', 'https://drive.google.com/file/d/1ffoGxjSYkD18MtIdPDQgfYYX75i49zID/view', 'https://drive.google.com/file/d/1ep_-a6-uytCVHZmY7OGVCvulercME4-L/view', 'https://drive.google.com/file/d/1OrVpcFOc_h5QKc3sBWLeUcyTdnNEKT1_/view', 'https://drive.google.com/file/d/1B_p2GZ2uumSoqcYl_XPeRNWaeC2EitRx/view', 'https://drive.google.com/file/d/1Vlf3_BOofw_s8uk3rzDomqoJlNTXhVba/view']
+const list =[
+  "https://drive.google.com/file/d/1AXl_lEJ515yxmsmBHYcdHmFXFGs5Sfm0/view",
+  "https://drive.google.com/file/d/1tuL0zKXjh3KyBHNgL-bqUbhY1Pg5OeO9/view",
+  "https://drive.google.com/file/d/1eiJNKRG8S2O_OI2Q84ZXzmkqH_1OYYkQ/view",
+  "https://drive.google.com/file/d/1Ez3iOXF5bU5Pyp1_SFXZif0F4QOuoDLb/view",
+  "https://drive.google.com/file/d/1j2df9oi2usxyU9D337OoMb_Qln81YT1j/view",
+  "https://drive.google.com/file/d/1BtpBfn-pZFa7rLzpjtAbsgFf2N2jnWrB/view",
+  "https://drive.google.com/file/d/1D6H7zPKpL6bg25tOXr5H04EM1ivGXUt2/view",
+  "https://drive.google.com/file/d/1fWEd9zksqxxUTnWiWAlSuz1rjowBx_5N/view",
+  "https://drive.google.com/file/d/10gUisUzsQN9taZhFXPJr9iym7zheiauY/view",
+  "https://drive.google.com/file/d/1ZQxxDsYBygn9DHN-YFtdY14aMzR-oWjL/view",
+  "https://drive.google.com/file/d/1TWLKwYjpasSi9l_PrZzqMC3kPYa_Gby0/view",
+  "https://drive.google.com/file/d/1ZrTVujcd3TZlldrTvZ8EKf7tVHn-ngu7/view",
+  "https://drive.google.com/file/d/1OOKob4MVYrNDEjRiFHuAJgT-kWppFJ-9/view",
+  "https://drive.google.com/file/d/1Ixda1-2mqh81oVKpkjjio-AxxR01rP5W/view",
+  "https://drive.google.com/file/d/1OJRsSvKgKj_9HVsSmT1HxXJhNNw1ogle/view",
+  "https://drive.google.com/file/d/14dGGdMMwdbrHWdv69MbfhidjqdpZkMGh/view",
+  "https://drive.google.com/file/d/1NDIVsFgWC8_LRUQ21pjYed1zPTRRLgYb/view",
+  "https://drive.google.com/file/d/1JGHAlmK7QVUF1SKaZX_Qm5czgyRRk8ps/view",
+  "https://drive.google.com/file/d/15CHbcaDZQzErfVFK5397RY58LzXmDx0L/view",
+  "https://drive.google.com/file/d/1UMWIr2Cy0RV5HdJsuq8f2C9fBVa2afM2/view",
+  "https://drive.google.com/file/d/1koS85LDJNfuwwu_eLIFZOvo5uixkeXDi/view",
+  "https://drive.google.com/file/d/1fTffR1CDn6g0MYQ_rQmS_0xiHpkBWRu0/view",
+  "https://drive.google.com/file/d/1fBbzy-ZjGqNXum8dyPcbxA0Ki8IQnA4X/view",
+  "https://drive.google.com/file/d/1mjYD7SzPg_npeHGkEaU3b4_aHgpqT05-/view",
+  "https://drive.google.com/file/d/1aMEpxSewW28x_ucagmeiQyxy3RoL3tgl/view",
+  "https://drive.google.com/file/d/1ghZjnfzuVsy4V4tb6cH8sPfj7UrT--gR/view",
+  "https://drive.google.com/file/d/1Azn-t1YqXAm1oVhgXQRx3Ba-KJN9UTRQ/view",
+  "https://drive.google.com/file/d/1ehLIxyIpgVXOUe_R2C5QduSrjAbM50Sl/view",
+  "https://drive.google.com/file/d/1uxBydBcpj6-tB8l6834UN0etvV5_jfzL/view",
+  "https://drive.google.com/file/d/1hy_svc-Ih1pKek0U9_2hDkVpH7eOEGjw/view",
+  "https://www.google.com/url?q=https%3A%2F%2Fwww.facebook.com%2FTaiLieuCNTT2021&sa=D&sntz=1&usg=AOvVaw00zQ6wRww5EGw2I_GsFf2u"
+]

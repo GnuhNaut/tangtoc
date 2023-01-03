@@ -33,3 +33,28 @@ img{
 .ans1:hover{
   background-color: aquamarine !important;
 }
+.countdown{
+  background-image: url(./images/z4010480818013_d2a94064e7b46b095dcd1373aa0d690c.jpg);
+  background-size: cover;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.btn{
+  border: 1px solid rgb(83, 77, 77);
+  border-radius: 10px;
+  padding:5px 15px;
+  background-color: rgb(226, 236, 244);
+  font-weight: bold;
+  cursor: pointer;
+}
+.timer{
+  display: flex;
+  justify-content: space-between;
+}
+.item{
+  font-size: 80px;
+  font-weight: 800;
+  padding: 24% 10% 0 ;
+}
