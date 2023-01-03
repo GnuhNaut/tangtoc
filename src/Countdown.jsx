@@ -9,14 +9,19 @@ const renderer = ({ hours, minutes, seconds }) => (
 export class CountDown extends React.Component {
     countdownApi = null;
     countdownApi1 = null;
+    countdownApi2 = null;
   state = { 
         time1: Date.now() + 60 * 1000 * 2,
-        time2: Date.now() + 60 * 1000 * 1
+        time2: Date.now() + 60 * 1000 * 1,
+        time3: Date.now() + 15 * 1000 ,
     };
 
   handleStartClick = () => {
     this.countdownApi && this.countdownApi.start();
     this.countdownApi1 && this.countdownApi1.pause();
+  };
+  handleStartClick1 = () => {
+    this.countdownApi2 && this.countdownApi2.start();
   };
 
   handlePauseClick = () => {
@@ -24,10 +29,20 @@ export class CountDown extends React.Component {
     this.countdownApi1 && this.countdownApi1.start();
   };
 
+  handlePauseClick1 = () => {
+    this.countdownApi2 && this.countdownApi2.pause();
+  };
+
   handleResetClick = () => {
     this.setState({ 
             time1: Date.now() + 60 * 1000 * 2 ,
             time2: Date.now() + 60 * 1000 * 1 ,
+        });
+  };
+
+  handleResetClick1 = () => {
+    this.setState({ 
+            time3: Date.now() + 15 * 1000  ,
         });
   };
 
@@ -43,6 +58,11 @@ export class CountDown extends React.Component {
   setRef1 = (countdown) => {
     if (countdown) {
       this.countdownApi1 = countdown.getApi();
+    }
+  };
+  setRef2 = (countdown) => {
+    if (countdown) {
+      this.countdownApi2 = countdown.getApi();
     }
   };
 
@@ -63,6 +83,19 @@ export class CountDown extends React.Component {
                     key={this.state.time1}
                     ref={this.setRef}
                     date={this.state.time1}
+                    onMount={this.handleUpdate}
+                    onStart={this.handleUpdate}
+                    onPause={this.handleUpdate}
+                    onComplete={this.handleUpdate}
+                    autoStart={false}
+                    renderer={renderer}
+                />
+            </div>
+            <div  className="item">
+                <Countdown
+                    key={this.state.time3}
+                    ref={this.setRef2}
+                    date={this.state.time3}
                     onMount={this.handleUpdate}
                     onStart={this.handleUpdate}
                     onPause={this.handleUpdate}
@@ -111,6 +144,35 @@ export class CountDown extends React.Component {
           </button>{' '}
           <button type="button" onClick={this.handleResetClick} className="btn">
             Thực hiện lại
+          </button>
+          </div>
+        </div>
+        <div
+            style={{
+                position: 'absolute',
+                bottom: 50,
+                right: 30
+            }}
+        >
+          <div>
+          <button
+            type="button"
+            onClick={this.handleStartClick1}
+            // disabled={!this.isPaused() || this.isCompleted()}
+            className="btn"
+          >
+            Start
+          </button>{' '}
+          <button
+            type="button"
+            onClick={this.handlePauseClick1}
+            // disabled={this.isPaused() || this.isCompleted()}
+            className="btn"
+          >
+            Pause
+          </button>{' '}
+          <button type="button" onClick={this.handleResetClick1} className="btn">
+            Reset
           </button>
           </div>
         </div>
